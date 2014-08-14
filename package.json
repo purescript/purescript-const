@@ -1,0 +1,25 @@
+{
+  "name": "purescript-const",
+  "version": "0.0.1",
+  "description": "Constant data type for PureScript.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/purescript-contrib/purescript-const.git"
+  },
+  "keywords": [
+    "PureScript",
+    "Const",
+    "const",
+    "constant"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/purescript-contrib/purescript-const/issues"
+  },
+  "homepage": "https://github.com/purescript-contrib/purescript-const",
+  "devDependencies": {
+    "gulp": "^3.8.7",
+    "gulp-purescript": "0.0.9",
+    "run-sequence": "^0.3.6"
+  }
+}
