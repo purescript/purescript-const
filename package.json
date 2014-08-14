@@ -1,6 +1,6 @@
 {
   "name": "purescript-const",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Constant data type for PureScript.",
   "repository": {
     "type": "git",
