@@ -3,6 +3,7 @@ module Data.Const where
   import Data.Contravariant (Contravariant, (>$<))
   import Data.Foldable (Foldable, foldr, foldl, foldMap)
   import Data.Monoid (Monoid, mempty)
+  import Data.Traversable (Traversable, traverse, sequence)
 
   newtype Const a b = Const a
 
@@ -48,3 +49,7 @@ module Data.Const where
     foldr _ z _ = z
     foldl _ z _ = z
     foldMap _ _ = mempty
+
+  instance traversableConst :: Traversable (Const a) where
+    traverse _ (Const x) = pure (Const x)
+    sequence (Const x) = pure (Const x)

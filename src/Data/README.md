@@ -34,6 +34,8 @@
 
     instance showConst :: (Show a) => Show (Const a b)
 
+    instance traversableConst :: Traversable (Const a)
+
 
 ### Values
 
