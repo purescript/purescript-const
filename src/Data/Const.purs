@@ -13,11 +13,11 @@ module Data.Const where
 
     (/=) c         c'        = not (c == c')
 
-  instance showConst :: (Show a) => Show (Const a b) where
-    show (Const x) = show x
-
   instance ordConst :: (Ord a) => Ord (Const a b) where
     compare (Const x) (Const y) = compare x y
+
+  instance showConst :: (Show a) => Show (Const a b) where
+    show (Const x) = "(Const " ++ show x ++ ")"
 
   instance semigroupoidConst :: Semigroupoid Const where
     (<<<) _ (Const x) = Const x
