@@ -20,6 +20,8 @@
 
     instance eqConst :: (Eq a) => Eq (Const a b)
 
+    instance foldableConst :: Foldable (Const a)
+
     instance functorConst :: Functor (Const a)
 
     instance monoidConst :: (Monoid a) => Monoid (Const a b)

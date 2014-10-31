@@ -1,6 +1,7 @@
 module Data.Const where
 
   import Data.Contravariant (Contravariant, (>$<))
+  import Data.Foldable (Foldable, foldr, foldl, foldMap)
   import Data.Monoid (Monoid, mempty)
 
   newtype Const a b = Const a
@@ -42,3 +43,8 @@ module Data.Const where
 
   instance contravariantConst :: Contravariant (Const a) where
     (>$<) _ (Const x) = Const x
+
+  instance foldableConst :: Foldable (Const a) where
+    foldr _ z _ = z
+    foldl _ z _ = z
+    foldMap _ _ = mempty
