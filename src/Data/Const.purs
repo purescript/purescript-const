@@ -1,7 +1,9 @@
 module Data.Const where
 
   import Data.Contravariant (Contravariant, (>$<))
+  import Data.Foldable (Foldable, foldr, foldl, foldMap)
   import Data.Monoid (Monoid, mempty)
+  import Data.Traversable (Traversable, traverse, sequence)
 
   newtype Const a b = Const a
 
@@ -13,11 +15,11 @@ module Data.Const where
 
     (/=) c         c'        = not (c == c')
 
-  instance showConst :: (Show a) => Show (Const a b) where
-    show (Const x) = show x
-
   instance ordConst :: (Ord a) => Ord (Const a b) where
     compare (Const x) (Const y) = compare x y
+
+  instance showConst :: (Show a) => Show (Const a b) where
+    show (Const x) = "Const (" ++ show x ++ ")"
 
   instance semigroupoidConst :: Semigroupoid Const where
     (<<<) _ (Const x) = Const x
@@ -42,3 +44,12 @@ module Data.Const where
 
   instance contravariantConst :: Contravariant (Const a) where
     (>$<) _ (Const x) = Const x
+
+  instance foldableConst :: Foldable (Const a) where
+    foldr _ z _ = z
+    foldl _ z _ = z
+    foldMap _ _ = mempty
+
+  instance traversableConst :: Traversable (Const a) where
+    traverse _ (Const x) = pure (Const x)
+    sequence (Const x) = pure (Const x)

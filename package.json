@@ -1,25 +1,29 @@
 {
   "name": "purescript-const",
-  "version": "0.1.0",
-  "description": "Constant data type for PureScript.",
+  "version": "0.1.1",
+  "description": "Constant data type for PureScript",
   "repository": {
     "type": "git",
-    "url": "https://github.com/purescript-contrib/purescript-const.git"
+    "url": "https://github.com/purescript/purescript-const.git"
   },
   "keywords": [
-    "PureScript",
-    "Const",
+    "purescript",
     "const",
     "constant"
   ],
+  "authors": [
+    "Hardy Jones <jones3.hardy@gmail.com>",
+    "Gary Burgess <gary.burgess@gmail.com>",
+    "Sean Chalmers <sclhiannan@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/purescript-contrib/purescript-const/issues"
+    "url": "https://github.com/purescript/purescript-const/issues"
   },
-  "homepage": "https://github.com/purescript-contrib/purescript-const",
+  "homepage": "https://github.com/purescript/purescript-const",
   "devDependencies": {
-    "gulp": "^3.8.7",
-    "gulp-purescript": "0.0.9",
-    "run-sequence": "^0.3.6"
+    "grunt": "~0.4.4",
+    "grunt-purescript": "~0.5.1",
+    "grunt-contrib-clean": "~0.5.0"
   }
 }
