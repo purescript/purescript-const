@@ -19,7 +19,7 @@ module Data.Const where
     compare (Const x) (Const y) = compare x y
 
   instance showConst :: (Show a) => Show (Const a b) where
-    show (Const x) = "(Const " ++ show x ++ ")"
+    show (Const x) = "Const (" ++ show x ++ ")"
 
   instance semigroupoidConst :: Semigroupoid Const where
     (<<<) _ (Const x) = Const x
