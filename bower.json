@@ -1,21 +1,26 @@
 {
   "name": "purescript-const",
-  "version": "0.1.0",
-  "homepage": "https://github.com/purescript-contrib/purescript-const",
-  "description": "Constant data type for PureScript.",
+  "homepage": "https://github.com/purescript/purescript-const",
+  "description": "Constant data type for PureScript",
   "keywords": [
-    "PureScript",
-    "Const",
+    "purescript",
     "const",
     "constant"
+  ],
+  "authors": [
+    "Hardy Jones <jones3.hardy@gmail.com>",
+    "Gary Burgess <gary.burgess@gmail.com>",
+    "Sean Chalmers <sclhiannan@gmail.com>"
   ],
   "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
-    "test",
-    "tests"
+    "output",
+    "bower.json",
+    "Gruntfile.js",
+    "package.json"
   ],
   "dependencies": {
     "purescript-monoid": "~0.1.2",
