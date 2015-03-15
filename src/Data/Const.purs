@@ -1,6 +1,6 @@
 module Data.Const where
 
-  import Data.Contravariant (Contravariant, (>$<))
+  import Data.Functor.Contravariant (Contravariant, (>$<))
   import Data.Foldable (Foldable, foldr, foldl, foldMap)
   import Data.Monoid (Monoid, mempty)
   import Data.Traversable (Traversable, traverse, sequence)
