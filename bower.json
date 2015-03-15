@@ -24,7 +24,7 @@
   ],
   "dependencies": {
     "purescript-monoid": "~0.2.0",
-    "purescript-contravariant": "~0.0.1",
+    "purescript-contravariant": "~0.1.0",
     "purescript-foldable-traversable": "~0.3.0"
   }
 }
