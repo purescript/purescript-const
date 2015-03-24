@@ -2,6 +2,9 @@
 
 ## Module Data.Const
 
+
+This module defines the `Const` type constructor.
+
 #### `Const`
 
 ``` purescript
@@ -9,6 +12,13 @@ newtype Const a b
   = Const a
 ```
 
+The `Const` type constructor, which wraps its first type argument
+and ignores its second. That is, `Const a b` is isomorphic to `a`
+for any `b`.
+
+`Const` has some useful instances. For example, the `Applicative`
+instance allows us to collect results using a `Monoid` while
+ignoring return values.
 
 #### `getConst`
 
@@ -16,6 +26,7 @@ newtype Const a b
 getConst :: forall a b. Const a b -> a
 ```
 
+Unwrap a value of type `Const a b`.
 
 #### `eqConst`
 
