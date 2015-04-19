@@ -1,119 +1,15 @@
-# Module Documentation
+# purescript-const
 
-## Module Data.Const
+[![Build Status](https://travis-ci.org/purescript/purescript-const.svg?branch=master)](https://travis-ci.org/purescript/purescript-const)
 
+Constant data type.
 
-This module defines the `Const` type constructor.
+## Installation
 
-#### `Const`
-
-``` purescript
-newtype Const a b
-  = Const a
+```
+bower install purescript-const
 ```
 
-The `Const` type constructor, which wraps its first type argument
-and ignores its second. That is, `Const a b` is isomorphic to `a`
-for any `b`.
+## Module documentation
 
-`Const` has some useful instances. For example, the `Applicative`
-instance allows us to collect results using a `Monoid` while
-ignoring return values.
-
-#### `getConst`
-
-``` purescript
-getConst :: forall a b. Const a b -> a
-```
-
-Unwrap a value of type `Const a b`.
-
-#### `eqConst`
-
-``` purescript
-instance eqConst :: (Eq a) => Eq (Const a b)
-```
-
-
-#### `ordConst`
-
-``` purescript
-instance ordConst :: (Ord a) => Ord (Const a b)
-```
-
-
-#### `showConst`
-
-``` purescript
-instance showConst :: (Show a) => Show (Const a b)
-```
-
-
-#### `semigroupoidConst`
-
-``` purescript
-instance semigroupoidConst :: Semigroupoid Const
-```
-
-
-#### `semigroupConst`
-
-``` purescript
-instance semigroupConst :: (Semigroup a) => Semigroup (Const a b)
-```
-
-
-#### `monoidConst`
-
-``` purescript
-instance monoidConst :: (Monoid a) => Monoid (Const a b)
-```
-
-
-#### `functorConst`
-
-``` purescript
-instance functorConst :: Functor (Const a)
-```
-
-
-#### `applyConst`
-
-``` purescript
-instance applyConst :: (Semigroup a) => Apply (Const a)
-```
-
-
-#### `bindConst`
-
-``` purescript
-instance bindConst :: (Semigroup a) => Bind (Const a)
-```
-
-
-#### `applicativeConst`
-
-``` purescript
-instance applicativeConst :: (Monoid a) => Applicative (Const a)
-```
-
-
-#### `contravariantConst`
-
-``` purescript
-instance contravariantConst :: Contravariant (Const a)
-```
-
-
-#### `foldableConst`
-
-``` purescript
-instance foldableConst :: Foldable (Const a)
-```
-
-
-#### `traversableConst`
-
-``` purescript
-instance traversableConst :: Traversable (Const a)
-```
+[`docs/MODULE.md`](docs/MODULE.md)

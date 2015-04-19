@@ -22,11 +22,14 @@ getConst (Const x) = x
 
 instance eqConst :: (Eq a) => Eq (Const a b) where
   (==) (Const x) (Const y) = x == y
-
   (/=) c         c'        = not (c == c')
 
 instance ordConst :: (Ord a) => Ord (Const a b) where
   compare (Const x) (Const y) = compare x y
+
+instance boundedConst :: (Bounded a) => Bounded (Const a b) where
+  top = Const top
+  bottom = Const bottom
 
 instance showConst :: (Show a) => Show (Const a b) where
   show (Const x) = "Const (" ++ show x ++ ")"
