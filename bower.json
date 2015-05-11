@@ -13,11 +13,16 @@
     "Sean Chalmers <sclhiannan@gmail.com>"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/purescript/purescript-const.git"
+  },
   "ignore": [
     "**/.*",
-    "node_modules",
     "bower_components",
+    "node_modules",
     "output",
+    "test",
     "bower.json",
     "gulpfile.js",
     "package.json"
