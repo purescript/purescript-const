@@ -2,6 +2,8 @@
 
 module Data.Const where
 
+import Prelude
+
 import Data.Bifoldable (Bifoldable)
 import Data.Foldable (Foldable)
 import Data.Functor.Contravariant (Contravariant)
