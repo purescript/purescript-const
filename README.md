@@ -12,4 +12,4 @@ bower install purescript-const
 
 ## Module documentation
 
-[`docs/MODULE.md`](docs/MODULE.md)
+- [Data.Const](docs/Data.Const.md)

@@ -9,6 +9,14 @@ newtype Const a b
   = Const a
 ```
 
+The `Const` type constructor, which wraps its first type argument
+and ignores its second. That is, `Const a b` is isomorphic to `a`
+for any `b`.
+
+`Const` has some useful instances. For example, the `Applicative`
+instance allows us to collect results using a `Monoid` while
+ignoring return values.
+
 ##### Instances
 ``` purescript
 instance eqConst :: (Eq a) => Eq (Const a b)
@@ -27,14 +35,6 @@ instance contravariantConst :: Contravariant (Const a)
 instance foldableConst :: Foldable (Const a)
 instance traversableConst :: Traversable (Const a)
 ```
-
-The `Const` type constructor, which wraps its first type argument
-and ignores its second. That is, `Const a b` is isomorphic to `a`
-for any `b`.
-
-`Const` has some useful instances. For example, the `Applicative`
-instance allows us to collect results using a `Monoid` while
-ignoring return values.
 
 #### `getConst`
 
