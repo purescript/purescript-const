@@ -2,11 +2,6 @@
   "name": "purescript-const",
   "homepage": "https://github.com/purescript/purescript-const",
   "description": "Constant data type for PureScript",
-  "keywords": [
-    "purescript",
-    "const",
-    "constant"
-  ],
   "authors": [
     "Hardy Jones <jones3.hardy@gmail.com>",
     "Gary Burgess <gary.burgess@gmail.com>",
@@ -27,7 +22,7 @@
     "package.json"
   ],
   "dependencies": {
-    "purescript-contravariant": "^0.2.0",
-    "purescript-foldable-traversable": "^0.4.0"
+    "purescript-contravariant": "^1.0.0-rc.1",
+    "purescript-foldable-traversable": "^1.0.0-rc.1"
   }
 }
