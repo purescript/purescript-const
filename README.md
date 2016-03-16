@@ -12,6 +12,6 @@ Constant data type.
 bower install purescript-const
 ```
 
-## Module documentation
+## Documentation
 
-- [Data.Const](docs/Data/Const.md)
+Module documentation is [published on Pursuit](http://pursuit.purescript.org/packages/purescript-const).
