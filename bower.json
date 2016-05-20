@@ -22,7 +22,7 @@
     "package.json"
   ],
   "dependencies": {
-    "purescript-contravariant": "^1.0.0-rc.1",
-    "purescript-foldable-traversable": "^1.0.0-rc.1"
+    "purescript-contravariant": "^1.0.0-rc.2",
+    "purescript-foldable-traversable": "^1.0.0-rc.2"
   }
 }

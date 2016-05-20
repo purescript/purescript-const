@@ -5,18 +5,18 @@ import Control.Apply (class Apply)
 import Control.Bind (class Bind)
 import Control.Semigroupoid (class Semigroupoid)
 
-import Data.BooleanAlgebra (class BooleanAlgebra, not, (||), (&&))
+import Data.BooleanAlgebra (class BooleanAlgebra)
 import Data.Bounded (class Bounded, bottom, top)
-import Data.BoundedOrd (class BoundedOrd)
-import Data.DivisionRing (class DivisionRing)
+import Data.CommutativeRing (class CommutativeRing)
 import Data.Eq (class Eq, (==))
+import Data.EuclideanRing (class EuclideanRing, mod, degree, (/))
+import Data.Field (class Field)
 import Data.Foldable (class Foldable)
 import Data.Functor (class Functor)
 import Data.Functor.Contravariant (class Contravariant)
 import Data.Functor.Invariant (class Invariant, imapF)
-import Data.ModuloSemiring (class ModuloSemiring, mod, (/))
+import Data.HeytingAlgebra (class HeytingAlgebra, not, implies, tt, ff, (&&), (||))
 import Data.Monoid (class Monoid, mempty)
-import Data.Num (class Num)
 import Data.Ord (class Ord, compare)
 import Data.Ring (class Ring, (-))
 import Data.Semigroup (class Semigroup, (<>))
@@ -47,8 +47,6 @@ instance boundedConst :: Bounded a => Bounded (Const a b) where
   top = Const top
   bottom = Const bottom
 
-instance boundedOrdConst :: BoundedOrd a => BoundedOrd (Const a b)
-
 instance showConst :: Show a => Show (Const a b) where
   show (Const x) = "(Const " <> show x <> ")"
 
@@ -70,18 +68,24 @@ instance semiringConst :: Semiring a => Semiring (Const a b) where
 instance ringConst :: Ring a => Ring (Const a b) where
   sub (Const x) (Const y) = Const (x - y)
 
-instance moduloSemiringConst :: ModuloSemiring a => ModuloSemiring (Const a b) where
+instance euclideanRingConst :: EuclideanRing a => EuclideanRing (Const a b) where
+  degree (Const x) = degree x
   div (Const x) (Const y) = Const (x / y)
   mod (Const x) (Const y) = Const (x `mod` y)
 
-instance divisionRingConst :: DivisionRing a => DivisionRing (Const a b)
+instance commutativeRingConst :: CommutativeRing a => CommutativeRing (Const a b)
 
-instance numConst :: Num a => Num (Const a b)
+instance fieldConst :: Field a => Field (Const a b)
 
-instance booleanAlgebraConst :: BooleanAlgebra a => BooleanAlgebra (Const a b) where
+instance heytingAlgebraConst :: HeytingAlgebra a => HeytingAlgebra (Const a b) where
+  ff = Const ff
+  tt = Const tt
+  implies (Const x) (Const y) = Const (x `implies` y)
   conj (Const x) (Const y) = Const (x && y)
   disj (Const x) (Const y) = Const (x || y)
   not (Const x) = Const (not x)
+
+instance booleanAlgebraConst :: BooleanAlgebra a => BooleanAlgebra (Const a b)
 
 instance functorConst :: Functor (Const a) where
   map _ (Const x) = Const x
