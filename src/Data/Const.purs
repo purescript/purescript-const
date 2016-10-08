@@ -1,27 +1,12 @@
 module Data.Const where
 
-import Control.Applicative (class Applicative, pure)
-import Control.Apply (class Apply)
-import Control.Bind (class Bind)
-import Control.Semigroupoid (class Semigroupoid)
+import Prelude
 
-import Data.BooleanAlgebra (class BooleanAlgebra)
-import Data.Bounded (class Bounded, bottom, top)
-import Data.CommutativeRing (class CommutativeRing)
-import Data.Eq (class Eq, (==))
-import Data.EuclideanRing (class EuclideanRing, mod, degree, (/))
-import Data.Field (class Field)
 import Data.Foldable (class Foldable)
-import Data.Functor (class Functor)
 import Data.Functor.Contravariant (class Contravariant)
 import Data.Functor.Invariant (class Invariant, imapF)
-import Data.HeytingAlgebra (class HeytingAlgebra, not, implies, tt, ff, (&&), (||))
 import Data.Monoid (class Monoid, mempty)
-import Data.Ord (class Ord, compare)
-import Data.Ring (class Ring, (-))
-import Data.Semigroup (class Semigroup, (<>))
-import Data.Semiring (class Semiring, one, zero, (+), (*))
-import Data.Show (class Show, show)
+import Data.Newtype (class Newtype)
 import Data.Traversable (class Traversable)
 
 -- | The `Const` type constructor, which wraps its first type argument
@@ -33,19 +18,13 @@ import Data.Traversable (class Traversable)
 -- | ignoring return values.
 newtype Const a b = Const a
 
--- | Unwrap a value of type `Const a b`.
-getConst :: forall a b. Const a b ->  a
-getConst (Const x) = x
+derive instance newtypeConst :: Newtype (Const a b) _
 
-instance eqConst :: Eq a => Eq (Const a b) where
-  eq (Const x) (Const y) = x == y
+derive newtype instance eqConst :: Eq a => Eq (Const a b)
 
-instance ordConst :: Ord a => Ord (Const a b) where
-  compare (Const x) (Const y) = compare x y
+derive newtype instance ordConst :: Ord a => Ord (Const a b)
 
-instance boundedConst :: Bounded a => Bounded (Const a b) where
-  top = Const top
-  bottom = Const bottom
+derive newtype instance boundedConst :: Bounded a => Bounded (Const a b)
 
 instance showConst :: Show a => Show (Const a b) where
   show (Const x) = "(Const " <> show x <> ")"
@@ -53,39 +32,23 @@ instance showConst :: Show a => Show (Const a b) where
 instance semigroupoidConst :: Semigroupoid Const where
   compose _ (Const x) = Const x
 
-instance semigroupConst :: Semigroup a => Semigroup (Const a b) where
-  append (Const x) (Const y) = Const (x <> y)
+derive newtype instance semigroupConst :: Semigroup a => Semigroup (Const a b)
 
-instance monoidConst :: Monoid a => Monoid (Const a b) where
-  mempty = Const mempty
+derive newtype instance monoidConst :: Monoid a => Monoid (Const a b)
 
-instance semiringConst :: Semiring a => Semiring (Const a b) where
-  add (Const x) (Const y) = Const (x + y)
-  zero = Const zero
-  mul (Const x) (Const y) = Const (x * y)
-  one = Const one
+derive newtype instance semiringConst :: Semiring a => Semiring (Const a b)
 
-instance ringConst :: Ring a => Ring (Const a b) where
-  sub (Const x) (Const y) = Const (x - y)
+derive newtype instance ringConst :: Ring a => Ring (Const a b)
 
-instance euclideanRingConst :: EuclideanRing a => EuclideanRing (Const a b) where
-  degree (Const x) = degree x
-  div (Const x) (Const y) = Const (x / y)
-  mod (Const x) (Const y) = Const (x `mod` y)
+derive newtype instance euclideanRingConst :: EuclideanRing a => EuclideanRing (Const a b)
 
-instance commutativeRingConst :: CommutativeRing a => CommutativeRing (Const a b)
+derive newtype instance commutativeRingConst :: CommutativeRing a => CommutativeRing (Const a b)
 
-instance fieldConst :: Field a => Field (Const a b)
+derive newtype instance fieldConst :: Field a => Field (Const a b)
 
-instance heytingAlgebraConst :: HeytingAlgebra a => HeytingAlgebra (Const a b) where
-  ff = Const ff
-  tt = Const tt
-  implies (Const x) (Const y) = Const (x `implies` y)
-  conj (Const x) (Const y) = Const (x && y)
-  disj (Const x) (Const y) = Const (x || y)
-  not (Const x) = Const (not x)
+derive newtype instance heytingAlgebraConst :: HeytingAlgebra a => HeytingAlgebra (Const a b)
 
-instance booleanAlgebraConst :: BooleanAlgebra a => BooleanAlgebra (Const a b)
+derive newtype instance booleanAlgebraConst :: BooleanAlgebra a => BooleanAlgebra (Const a b)
 
 instance functorConst :: Functor (Const a) where
   map _ (Const x) = Const x
