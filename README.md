@@ -1,8 +1,7 @@
 # purescript-const
 
-[![Latest release](http://img.shields.io/bower/v/purescript-const.svg)](https://github.com/purescript/purescript-const/releases)
-[![Build Status](https://travis-ci.org/purescript/purescript-const.svg?branch=master)](https://travis-ci.org/purescript/purescript-const)
-[![Dependency Status](https://www.versioneye.com/user/projects/55848c9e363861001b0001a2/badge.svg?style=flat)](https://www.versioneye.com/user/projects/55848c9e363861001b0001a2)
+[![Latest release](http://img.shields.io/github/release/purescript/purescript-const.svg)](https://github.com/purescript/purescript-const/releases)
+[![Build status](https://travis-ci.org/purescript/purescript-const.svg?branch=master)](https://travis-ci.org/purescript/purescript-const)
 
 Constant data type.
 
