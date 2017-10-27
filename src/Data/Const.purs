@@ -2,6 +2,7 @@ module Data.Const where
 
 import Prelude
 
+import Data.Eq (class Eq1)
 import Data.Foldable (class Foldable)
 import Data.Functor.Contravariant (class Contravariant)
 import Data.Functor.Invariant (class Invariant, imapF)
@@ -21,6 +22,9 @@ newtype Const a b = Const a
 derive instance newtypeConst :: Newtype (Const a b) _
 
 derive newtype instance eqConst :: Eq a => Eq (Const a b)
+
+instance eq1Const :: Eq a => Eq1 (Const a) where
+  eq1 = eq
 
 derive newtype instance ordConst :: Ord a => Ord (Const a b)
 
