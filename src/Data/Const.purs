@@ -8,6 +8,7 @@ import Data.Functor.Contravariant (class Contravariant)
 import Data.Functor.Invariant (class Invariant, imapF)
 import Data.Monoid (class Monoid, mempty)
 import Data.Newtype (class Newtype)
+import Data.Ord (class Ord1)
 import Data.Traversable (class Traversable)
 
 -- | The `Const` type constructor, which wraps its first type argument
@@ -27,6 +28,9 @@ instance eq1Const :: Eq a => Eq1 (Const a) where
   eq1 = eq
 
 derive newtype instance ordConst :: Ord a => Ord (Const a b)
+
+instance ord1Const :: Ord a => Ord1 (Const a) where
+  compare1 = compare
 
 derive newtype instance boundedConst :: Bounded a => Bounded (Const a b)
 
