@@ -6,7 +6,6 @@ import Data.Eq (class Eq1)
 import Data.Foldable (class Foldable)
 import Data.Functor.Contravariant (class Contravariant)
 import Data.Functor.Invariant (class Invariant, imapF)
-import Data.Monoid (class Monoid, mempty)
 import Data.Newtype (class Newtype)
 import Data.Ord (class Ord1)
 import Data.Traversable (class Traversable)
@@ -24,13 +23,11 @@ derive instance newtypeConst :: Newtype (Const a b) _
 
 derive newtype instance eqConst :: Eq a => Eq (Const a b)
 
-instance eq1Const :: Eq a => Eq1 (Const a) where
-  eq1 = eq
+derive instance eq1Const :: Eq a => Eq1 (Const a)
 
 derive newtype instance ordConst :: Ord a => Ord (Const a b)
 
-instance ord1Const :: Ord a => Ord1 (Const a) where
-  compare1 = compare
+derive instance ord1Const :: Ord a => Ord1 (Const a)
 
 derive newtype instance boundedConst :: Bounded a => Bounded (Const a b)
 
@@ -58,8 +55,7 @@ derive newtype instance heytingAlgebraConst :: HeytingAlgebra a => HeytingAlgebr
 
 derive newtype instance booleanAlgebraConst :: BooleanAlgebra a => BooleanAlgebra (Const a b)
 
-instance functorConst :: Functor (Const a) where
-  map _ (Const x) = Const x
+derive instance functorConst :: Functor (Const a)
 
 instance invariantConst :: Invariant (Const a) where
   imap = imapF
