@@ -64,9 +64,6 @@ instance contravariantConst :: Contravariant (Const a) where
 instance applyConst :: Semigroup a => Apply (Const a) where
   apply (Const x) (Const y) = Const (x <> y)
 
-instance bindConst :: Semigroup a => Bind (Const a) where
-  bind (Const x) _ = Const x
-
 instance applicativeConst :: Monoid a => Applicative (Const a) where
   pure _ = Const mempty
 
