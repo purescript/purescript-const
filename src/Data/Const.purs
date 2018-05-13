@@ -49,8 +49,6 @@ derive newtype instance euclideanRingConst :: EuclideanRing a => EuclideanRing (
 
 derive newtype instance commutativeRingConst :: CommutativeRing a => CommutativeRing (Const a b)
 
-derive newtype instance fieldConst :: Field a => Field (Const a b)
-
 derive newtype instance heytingAlgebraConst :: HeytingAlgebra a => HeytingAlgebra (Const a b)
 
 derive newtype instance booleanAlgebraConst :: BooleanAlgebra a => BooleanAlgebra (Const a b)
