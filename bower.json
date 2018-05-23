@@ -1,13 +1,12 @@
 {
   "name": "purescript-const",
   "homepage": "https://github.com/purescript/purescript-const",
-  "description": "Constant data type for PureScript",
   "authors": [
     "Hardy Jones <jones3.hardy@gmail.com>",
     "Gary Burgess <gary.burgess@gmail.com>",
     "Sean Chalmers <sclhiannan@gmail.com>"
   ],
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
     "url": "git://github.com/purescript/purescript-const.git"
@@ -22,7 +21,10 @@
     "package.json"
   ],
   "dependencies": {
-    "purescript-contravariant": "^3.0.0",
-    "purescript-foldable-traversable": "^3.0.0"
+    "purescript-contravariant": "^4.0.0",
+    "purescript-foldable-traversable": "^4.0.0",
+    "purescript-invariant": "^4.0.0",
+    "purescript-newtype": "^3.0.0",
+    "purescript-prelude": "^4.0.0"
   }
 }
