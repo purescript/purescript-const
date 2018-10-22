@@ -2,13 +2,19 @@ module Data.Const where
 
 import Prelude
 
+import Data.Bifoldable (class Bifoldable)
+import Data.Bifunctor (class Bifunctor)
+import Data.Bitraversable (class Bitraversable)
 import Data.Eq (class Eq1)
 import Data.Foldable (class Foldable)
+import Data.FoldableWithIndex (class FoldableWithIndex)
 import Data.Functor.Contravariant (class Contravariant)
 import Data.Functor.Invariant (class Invariant, imapF)
+import Data.FunctorWithIndex (class FunctorWithIndex)
 import Data.Newtype (class Newtype)
 import Data.Ord (class Ord1)
 import Data.Traversable (class Traversable)
+import Data.TraversableWithIndex (class TraversableWithIndex)
 
 -- | The `Const` type constructor, which wraps its first type argument
 -- | and ignores its second. That is, `Const a b` is isomorphic to `a`
@@ -55,6 +61,12 @@ derive newtype instance booleanAlgebraConst :: BooleanAlgebra a => BooleanAlgebr
 
 derive instance functorConst :: Functor (Const a)
 
+instance bifunctorConst :: Bifunctor Const where
+  bimap f _ (Const a) = Const (f a)
+
+instance functorWithIndexConst :: FunctorWithIndex Void (Const a) where
+  mapWithIndex _ (Const x) = Const x
+
 instance invariantConst :: Invariant (Const a) where
   imap = imapF
 
@@ -72,6 +84,23 @@ instance foldableConst :: Foldable (Const a) where
   foldl _ z _ = z
   foldMap _ _ = mempty
 
+instance foldableWithIndexConst :: FoldableWithIndex Void (Const a) where
+  foldrWithIndex _ z _ = z
+  foldlWithIndex _ z _ = z
+  foldMapWithIndex _ _ = mempty
+
+instance bifoldableConst :: Bifoldable Const where
+  bifoldr f _ z (Const a) = f a z
+  bifoldl f _ z (Const a) = f z a
+  bifoldMap f _ (Const a) = f a
+
 instance traversableConst :: Traversable (Const a) where
   traverse _ (Const x) = pure (Const x)
   sequence (Const x) = pure (Const x)
+
+instance traversableWithIndexConst :: TraversableWithIndex Void (Const a) where
+  traverseWithIndex _ (Const x) = pure (Const x)
+
+instance bitraversableConst :: Bitraversable Const where
+  bitraverse f _ (Const a) = Const <$> f a
+  bisequence (Const a) = Const <$> a
