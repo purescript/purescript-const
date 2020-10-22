@@ -23,7 +23,7 @@ import Data.TraversableWithIndex (class TraversableWithIndex)
 -- | `Const` has some useful instances. For example, the `Applicative`
 -- | instance allows us to collect results using a `Monoid` while
 -- | ignoring return values.
-newtype Const ∷ ∀ k. Type → k → Type
+newtype Const :: forall k. Type -> k -> Type
 newtype Const a b = Const a
 
 derive instance newtypeConst :: Newtype (Const a b) _
