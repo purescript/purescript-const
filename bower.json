@@ -21,10 +21,10 @@
     "package.json"
   ],
   "dependencies": {
-    "purescript-contravariant": "^4.0.0",
-    "purescript-foldable-traversable": "^4.0.0",
-    "purescript-invariant": "^4.0.0",
-    "purescript-newtype": "^3.0.0",
-    "purescript-prelude": "^4.0.0"
+    "purescript-contravariant": "master",
+    "purescript-foldable-traversable": "master",
+    "purescript-invariant": "master",
+    "purescript-newtype": "master",
+    "purescript-prelude": "master"
   }
 }
