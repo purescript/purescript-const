@@ -1,14 +1,14 @@
 # purescript-const
 
 [![Latest release](http://img.shields.io/github/release/purescript/purescript-const.svg)](https://github.com/purescript/purescript-const/releases)
-[![Build status](https://travis-ci.org/purescript/purescript-const.svg?branch=master)](https://travis-ci.org/purescript/purescript-const)
+[![Build status](https://github.com/purescript/purescript-const/workflows/CI/badge.svg?branch=master)](https://github.com/purescript/purescript-const/actions?query=workflow%3ACI+branch%3Amaster)
 
 Constant data type.
 
 ## Installation
 
 ```
-bower install purescript-const
+spago install const
 ```
 
 ## Documentation
