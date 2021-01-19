@@ -5,7 +5,7 @@ Notable changes to this project are documented in this file. The format is based
 ## [Unreleased]
 
 Breaking changes:
-  - Updated code for PureScript 0.14 (#15)
+  - Added support for PureScript 0.14 and dropped support for all previous versions (#15)
 
 New features:
 
@@ -13,7 +13,7 @@ Bugfixes:
 
 Other improvements:
   - Migrated CI to GitHub Actions and updated installation instructions to use Spago (#16)
-  - Added a CHANGELOG.md file and pull request template (#17 #18)
+  - Added a CHANGELOG.md file and pull request template (#17, #18)
 
 ## [v4.1.0](https://github.com/purescript/purescript-const/releases/tag/v4.1.0) - 2018-10-30
 
