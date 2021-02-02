@@ -8,6 +8,7 @@ Breaking changes:
   - Added support for PureScript 0.14 and dropped support for all previous versions (#15)
 
 New features:
+  - This package no longer depends on the `purescript-contravariant` and `purescript-foldable-traversable` packages. Relevant instances have been moved to those packages. (#19)
 
 Bugfixes:
 
