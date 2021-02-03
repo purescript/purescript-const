@@ -21,8 +21,6 @@
     "package.json"
   ],
   "dependencies": {
-    "purescript-contravariant": "master",
-    "purescript-foldable-traversable": "master",
     "purescript-invariant": "master",
     "purescript-newtype": "master",
     "purescript-prelude": "master"
