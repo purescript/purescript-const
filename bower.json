@@ -21,8 +21,8 @@
     "package.json"
   ],
   "dependencies": {
-    "purescript-invariant": "master",
-    "purescript-newtype": "master",
-    "purescript-prelude": "master"
+    "purescript-invariant": "^6.0.0",
+    "purescript-newtype": "^5.0.0",
+    "purescript-prelude": "^6.0.0"
   }
 }
