@@ -12,6 +12,8 @@ Bugfixes:
 
 Other improvements:
 
+- Migrate from Bower/Pulp to Spago and update CI and formatting tools.
+
 ## [v6.0.0](https://github.com/purescript/purescript-const/releases/tag/v6.0.0) - 2022-04-27
 
 Breaking changes:
@@ -104,4 +106,3 @@ Updated docs
 ## [v0.1.1](https://github.com/purescript/purescript-const/releases/tag/v0.1.1) - 2014-11-01
 
 - Added `Foldable` and `Traversable` instances (@garyb)
-
